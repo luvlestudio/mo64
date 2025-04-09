@@ -1,37 +1,37 @@
 window.onload = () => {
-  const showMoreBtn = document.getElementById('showMoreBtn');
-  const collapseBtn = document.getElementById('collapseBtn');
-  const hiddenImages = document.querySelectorAll('#gallery img.hidden');
+  const showMoreBtn = document.getElementById("showMoreBtn");
+  const collapseBtn = document.getElementById("collapseBtn");
+  const hiddenImages = document.querySelectorAll("#gallery img.hidden");
 
-  showMoreBtn.addEventListener('click', () => {
+  showMoreBtn.addEventListener("click", () => {
     hiddenImages.forEach((img) => {
-      img.classList.remove('hidden');
+      img.classList.remove("hidden");
     });
-    collapseBtn.style.display = 'inline-block';
-    collapseBtn.style.backgroundColor = 'ffe08c';
-    collapseBtn.style.width = '70px';
-    collapseBtn.style.textAlign = 'center';
-    collapseBtn.style.display = 'block';
-    collapseBtn.style.margin = '7% auto';
-    collapseBtn.style.borderRadius = '15px';
+    collapseBtn.style.display = "inline-block";
+    collapseBtn.style.backgroundColor = "ffe08c";
+    collapseBtn.style.width = "70px";
+    collapseBtn.style.textAlign = "center";
+    collapseBtn.style.display = "block";
+    collapseBtn.style.margin = "7% auto";
+    collapseBtn.style.borderRadius = "15px";
 
-    showMoreBtn.style.display = 'none';
+    showMoreBtn.style.display = "none";
   });
 
-  collapseBtn.addEventListener('click', () => {
-    const galleryImages = document.querySelectorAll('#addGalleyItem');
+  collapseBtn.addEventListener("click", () => {
+    const galleryImages = document.querySelectorAll("#addGalleyItem");
     galleryImages.forEach((img) => {
-      img.classList.add('hidden');
+      img.classList.add("hidden");
     });
-    collapseBtn.style.display = 'none';
+    collapseBtn.style.display = "none";
 
-    showMoreBtn.style.display = 'inline-block';
-    showMoreBtn.style.backgroundColor = 'ffe08c';
-    showMoreBtn.style.width = '70px';
-    showMoreBtn.style.textAlign = 'center';
-    showMoreBtn.style.display = 'block';
-    showMoreBtn.style.margin = '7% auto';
-    showMoreBtn.style.borderRadius = '15px';
+    showMoreBtn.style.display = "inline-block";
+    showMoreBtn.style.backgroundColor = "ffe08c";
+    showMoreBtn.style.width = "70px";
+    showMoreBtn.style.textAlign = "center";
+    showMoreBtn.style.display = "block";
+    showMoreBtn.style.margin = "7% auto";
+    showMoreBtn.style.borderRadius = "15px";
   });
 
   // const galleryImages = document.querySelectorAll("#gallery img");
@@ -41,27 +41,27 @@ window.onload = () => {
   //   };
   // });
 
-  const btnShareKa = document.querySelector('.shareKt');
-  btnShareKa.addEventListener('click', () => {
+  const btnShareKa = document.querySelector(".shareKt");
+  btnShareKa.addEventListener("click", () => {
     Kakao.Share.sendDefault({
-      objectType: 'feed',
+      objectType: "feed",
       content: {
-        title: '두람 ♥ 민경의 모바일 청첩장',
-        description: '2025년 5월 17일 토요일♡',
-        imageUrl: 'https://i.imgur.com/3bbaYyU.png',
+        title: "경훈 ♥ 은지의 모바일 청첩장",
+        description: "2025년 6월 7일 토요일♡",
+        imageUrl: "https://i.imgur.com/BxfAjWm.png",
         imageWidth: 1200,
         imageHeight: 630,
-        link: {mo64
-          mobileWebUrl: 'https://mo64.luvle.kr',
-          webUrl: 'https://mo64.luvle.kr',
+        link: {
+          mobileWebUrl: "https://mo74.luvle.kr",
+          webUrl: "https://mo74.luvle.kr",
         },
       },
       buttons: [
         {
-          title: '자세히 보기',
+          title: "자세히 보기",
           link: {
-            mobileWebUrl: 'https://mo64.luvle.kr',
-            webUrl: 'https://mo64.luvle.kr',
+            mobileWebUrl: "https://mo74.luvle.kr",
+            webUrl: "https://mo74.luvle.kr",
           },
         },
       ],
@@ -84,42 +84,36 @@ window.onload = () => {
   //   window.open(`http://www.facebook.com/sharer/sharer.php?u=${pageUrl}`);
   // });
 
-  const swiper = new Swiper('.swiper-container', {
+  const swiper = new Swiper(".swiper-container", {
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   });
 
-  const documentBody = document.querySelector('body');
+  const documentBody = document.querySelector("body");
 
-  const outsideModal = document.querySelector('.swiper');
-  outsideModal.addEventListener('click', function (event) {
-    if (event.target.classList.contains('swiper-slide')) {
-      outsideModal.style.display = 'none';
-      documentBody.style.overflow = 'auto';
+  const outsideModal = document.querySelector(".swiper");
+  outsideModal.addEventListener("click", function (event) {
+    if (event.target.classList.contains("swiper-slide")) {
+      outsideModal.style.display = "none";
+      documentBody.style.overflow = "auto";
     }
   });
 
-  const swiperCloseBtn = document.querySelector('#swiper-close-button');
-  swiperCloseBtn.addEventListener('click', () => {
-    outsideModal.style.display = 'none';
-    documentBody.style.overflow = 'auto';
-  });
-
-  const galleryImages = document.querySelectorAll('#gallery img');
+  const galleryImages = document.querySelectorAll("#gallery img");
   galleryImages.forEach((img, index) => {
     img.onclick = () => {
       swiper.slideTo(index);
-      outsideModal.style.display = 'block';
-      documentBody.style.overflow = 'hidden';
+      outsideModal.style.display = "block";
+      documentBody.style.overflow = "hidden";
     };
   });
 
-  const shareViaSMSBtn = document.querySelector('.shareTwoG');
-  shareViaSMSBtn.addEventListener('click', () => {
-    const message = '모바일 청첩장을 확인해주세요! ' + window.location.href;
-    const link = 'sms:?body=' + encodeURIComponent(message);
+  const shareViaSMSBtn = document.querySelector(".shareTwoG");
+  shareViaSMSBtn.addEventListener("click", () => {
+    const message = "모바일 청첩장을 확인해주세요! " + window.location.href;
+    const link = "sms:?body=" + encodeURIComponent(message);
     window.location.href = link;
   });
 };
